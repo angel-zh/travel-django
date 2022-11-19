@@ -5,14 +5,15 @@
 This travel booking app handles the booking of travellers and accommodation for anyone looking to make their travel plans as easy and convenient as possible.
 
 ## INSTRUCTIONS
-This project requires the following installation:
-- pipenv install
-- pipenv install django
-- pipenv install psycopg2-binary
-- pipenv install djangorestframework
+This project requires the following:
+- `pipenv install`
+- `pipenv shell`
+- `pipenv install django`
+- `pipenv install psycopg2-binary`
+- `pipenv install djangorestframework`
 
 ## ROUTES
-All models have full CRUD functionality. `Traveller` is joined to `Hotel` and `Flight` via `Booking` in a many-to-many relationship.
+`Traveller` is joined to `Hotel` and `Flight` via `Booking` in a many-to-many relationship.
 ### Hotel:
 | Endpoint      | HTTP Verb | Description |
 |---------------|-----------|-------------|
@@ -47,4 +48,4 @@ All models have full CRUD functionality. `Traveller` is joined to `Hotel` and `F
 | trip/bookings/       | post      | create a booking      |
 | trip/bookings/:pk/   | get       | show a booking      |
 | trip/bookings/:pk/   | patch     | update a booking    |
-| trip/bookings/:pk/   | delete    | delete a booking    |# travel-django
+| trip/bookings/:pk/   | delete    | delete a booking    |
