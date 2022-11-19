@@ -8,10 +8,10 @@ from ..models.traveller import Traveller
 
 # Create your views here.
 
-# localhost:8000/trip/travellers/ ---> get, post
+# localhost:8000/trip/travellers/ 
 
 class TravellersView(APIView):
-    """View class for travellers/ for viewing all and creating a traveller trip"""
+    """View class for travellers/ for viewing all and creating a traveller"""
     serializer_class = TravellerSerializer
     def get(self, request):
         travellers = Traveller.objects.all()
@@ -27,10 +27,10 @@ class TravellersView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# localhost:8000/trip/travellers/:id ---> get, patch, delete
+# localhost:8000/trip/travellers/:pk
 
 class TravellerDetailView(APIView):
-    """View class for travellers/:pk for viewing, updating, and removing a single traveller trip"""
+    """View class for travellers/:pk for viewing, updating, and removing a single traveller"""
     serializer_class = TravellerSerializer
     def get(self, request, pk):
         traveller = get_object_or_404(Traveller, pk=pk)

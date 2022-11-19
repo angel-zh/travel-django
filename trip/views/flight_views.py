@@ -8,10 +8,10 @@ from ..models.flight import Flight
 
 # Create your views here.
 
-# localhost:8000/trip/flights/ ---> get, post
+# localhost:8000/trip/flights/ 
 
 class FlightsView(APIView):
-    """View class for flights/ for viewing all and creating a flight trip"""
+    """View class for flights/ for viewing all and creating a flight"""
     serializer_class = FlightSerializer # changes input to form view
     def get(self, request):
         flights = Flight.objects.all()
@@ -27,10 +27,10 @@ class FlightsView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# localhost:8000/trip/flights/:id ---> get, patch, delete
+# localhost:8000/trip/flights/:pk
 
 class FlightDetailView(APIView):
-    """View class for flights/:pk for viewing, updating, and removing a single flight trip"""
+    """View class for flights/:pk for viewing, updating, and removing a single flight"""
     serializer_class = FlightSerializer
     def get(self, request, pk):
         flight = get_object_or_404(Flight, pk=pk)

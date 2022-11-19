@@ -7,9 +7,9 @@ from ..models.booking import Booking
 from ..serializers import BookingSerializer, BookingReadSerializer
 
 # Create your views here.
-#localhost:8000/trip/bookings/ get post
+#localhost:8000/trip/bookings/  
 class BookingsView(APIView):
-    """View class for bookings/ for viewing all and creating"""
+    """View class for bookings/ for viewing all and creating a booking"""
     serializer_class = BookingSerializer
     def get(self, request):
         bookings = Booking.objects.all()
@@ -24,7 +24,7 @@ class BookingsView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#localhost:8000/trip/bookings/:id get delete update
+#localhost:8000/trip/bookings/:pk
 class BookingDetailView(APIView):
     """View class for bookings/:pk for viewing a single booking, updating a single booking, or removing a single booking"""
     serializer_class = BookingSerializer

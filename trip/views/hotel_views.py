@@ -8,10 +8,10 @@ from ..models.hotel import Hotel
 
 # Create your views here.
 
-# localhost:8000/trip/hotels/ ---> get, post
+# localhost:8000/trip/hotels/ 
 
 class HotelsView(APIView):
-    """View class for hotels/ for viewing all and creating a hotel trip"""
+    """View class for hotels/ for viewing all and creating a hotel"""
     serializer_class = HotelSerializer
     def get(self, request):
         hotels = Hotel.objects.all()
@@ -27,10 +27,10 @@ class HotelsView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# localhost:8000/trip/hotels/:id ---> get, patch, delete
+# localhost:8000/trip/hotels/:pk
 
 class HotelDetailView(APIView):
-    """View class for hotels/:pk for viewing, updating, and removing a single hotel trip"""
+    """View class for hotels/:pk for viewing, updating, and removing a single hotel"""
     serializer_class = HotelSerializer
     def get(self, request, pk):
         hotel = get_object_or_404(Hotel, pk=pk)
