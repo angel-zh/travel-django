@@ -2,7 +2,8 @@
 
 ## OVERVIEW
 
-This travel booking app handles the booking of travellers and accommodation for anyone looking to make their travel plans as easy and convenient as possible.
+Made using django, python, and postgreSQL, this travel booking app handles the booking of flights and accommodation for anyone looking to make their travel plans as easy and convenient as possible.
+
 
 ## INSTRUCTIONS
 This project requires the following:
